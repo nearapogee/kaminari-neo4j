@@ -3,6 +3,7 @@ RSpec.describe Kaminari::Neo4j do
     include Neo4j::ActiveNode
     property :a
     property :x
+    id_property :uuid
   end
 
   let(:total_count){ 10 }

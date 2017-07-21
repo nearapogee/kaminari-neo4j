@@ -20,7 +20,7 @@ module Kaminari
       end
 
       def total
-        source.count
+        (@total_items || source).count
       end
 
       def items
@@ -40,7 +40,7 @@ module Kaminari
       end
 
       def pluck(*args)
-        @items = source.pluck(*args)
+        @total_items = @items = source.pluck(*args)
         self
       end
 
